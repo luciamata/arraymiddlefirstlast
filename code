@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title> Arrays </title>
+    <script>
+    /* Input: An array.
+     * Processing: Calculate the sum of the first and last values listed
+            in the array (addEnds). Find the middle value, or an average if
+            the array has an even amount of elements (getMiddle).
+     * Output: Display the sum and the middle number (or average).
+     */
+
+     function wrapper()  {
+       var list = [1, 2, 3, 4, 5, 6];
+       var ends = addEnds(list);
+       var middle = getMiddle(list);
+       document.getElementById("output1").innerHTML = ends;
+       document.getElementById("output2").innerHTML = middle;
+     }
+
+     function addEnds(list) {
+       var first = list[0];
+       var last = list[list.length-1];
+       var sum = first + last;
+       return sum;
+     }
+
+     function getMiddle(list) {
+       if (list.length % 2 == 1) {
+         return list[(list.length-1)/2];
+       }
+       else {
+         return (list[list.length/2] + list[list.length/2 -1]) /2;
+       }
+     }
+
+    </script>
+  </head>
+
+  <body>
+    <button type="button" onclick="wrapper()">Click</button> <br>
+    Sum: <div id="output1"></div>
+    Middle: <div id="output2"></div>
+</html>
